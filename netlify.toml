@@ -1,0 +1,14 @@
+[build]
+  publish = "."
+
+# Form settings
+[build.environment]
+  # No build process needed - static site
+
+# Redirect rules (optional - for clean URLs)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  conditions = {Role = ["admin"]}
+

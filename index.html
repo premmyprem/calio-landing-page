@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calio | Business Infrastructure That Runs 24/7</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="description" content="AI-enabled websites and voice agents that answer every call, book every lead, and run while you sleep. Built for businesses that can't afford to miss opportunities.">
+    <style>
+/* ===================================
+   RESET & BASE
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #1e3a8a;
+    --color-primary-light: #3b82f6;
+    --color-text: #0f172a;
+    --color-text-secondary: #475569;
+    --color-background: #ffffff;
+    --color-background-subtle: #f8fafc;
+    --color-border: #e2e8f0;
+    --color-dark: #0f172a;
+    
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    --container-width: 1200px;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ===================================
+   HEADER
+   =================================== */
+.header {
+    background: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.25rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+}
+
+.logo-lockup {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-left: -2px;
+}
+
+.logo-c {
+    width: 42px;
+    height: 42px;
+    margin-right: -6px;
+}
+
+.logo-text {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+}
+
+.header-cta {
+    display: inline-block;
+    background: var(--color-primary);
+    color: white;
+    padding: 0.625rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.header-cta:hover {
+    background: var(--color-primary-light);
+    transform: translateY(-1px);
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+.hero {
+    padding: 2rem 0 3rem;
+    background: var(--color-background);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: 
+        linear-gradient(to bottom, rgba(248, 250, 252, 0) 0%, rgba(248, 250, 252, 0.6) 100%),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 1px,
+            rgba(226, 232, 240, 0.1) 1px,
+            rgba(226, 232, 240, 0.1) 2px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 1px,
+            rgba(226, 232, 240, 0.1) 1px,
+            rgba(226, 232, 240, 0.1) 2px
+        );
+    background-size: 100% 100%, 60px 60px, 60px 60px;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 4rem;
+    align-items: start;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 2rem;
+}
+
+.hero-headline {
+    font-size: 4rem;
+    line-height: 1.05;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.04em;
+}
+
+.hero-subheadline {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    max-width: 480px;
+}
+
+.hero-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.chat-window {
+    width: 90%;
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    height: 550px;
+}
+
+.chat-header {
+    background: var(--color-primary);
+    color: white;
+    padding: 1rem 1.25rem;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.chat-status-dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.chat-title {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.chat-subtitle {
+    font-size: 0.75rem;
+    opacity: 0.9;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.chat-message {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.chat-message.user {
+    align-items: flex-end;
+}
+
+.chat-message.ai {
+    align-items: flex-start;
+}
+
+.message-bubble {
+    max-width: 80%;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.user .message-bubble {
+    background: var(--color-primary);
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.ai .message-bubble {
+    background: var(--color-background-subtle);
+    color: var(--color-text);
+    border-bottom-left-radius: 4px;
+}
+
+.message-sender {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    padding: 0 0.5rem;
+    font-weight: 500;
+}
+
+.typing-indicator {
+    display: flex;
+    gap: 0.25rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-background-subtle);
+    border-radius: 12px;
+    border-bottom-left-radius: 4px;
+    max-width: fit-content;
+}
+
+.typing-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--color-text-secondary);
+    border-radius: 50%;
+    animation: typing 1.4s infinite;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-8px); }
+}
+
+.chat-input {
+    padding: 1rem 1.25rem;
+    border-top: 1px solid var(--color-border);
+    background: var(--color-background-subtle);
+    border-radius: 0 0 12px 12px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 0.9375rem;
+    background: white;
+    color: var(--color-text-secondary);
+}
+
+.booking-confirmation {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.booking-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.booking-icon {
+    width: 36px;
+    height: 36px;
+    background: #10b981;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.125rem;
+}
+
+.booking-title {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.booking-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.875rem;
+}
+
+.booking-detail:last-child {
+    border-bottom: none;
+}
+
+.booking-label {
+    color: var(--color-text-secondary);
+}
+
+.booking-value {
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+/* Audio Demo Button */
+.audio-demo-button {
+    margin-top: 2rem;
+    display: inline-block;
+}
+
+.demo-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--color-primary);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+.demo-button:hover {
+    background: var(--color-primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(30, 58, 138, 0.4);
+}
+
+.demo-button-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.demo-button-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+
+/* ===================================
+   SERVICES SECTION
+   =================================== */
+.services {
+    padding: 6rem 0;
+    background: var(--color-background-subtle);
+    border-top: 1px solid var(--color-border);
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.services-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.services-description {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.service-card {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 24px rgba(30, 58, 138, 0.12);
+    transform: translateY(-4px);
+}
+
+.service-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.service-description {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.9375rem;
+}
+
+.service-features {
+    list-style: none;
+}
+
+.service-features li {
+    color: var(--color-text);
+    padding: 0.5rem 0;
+    font-size: 0.9375rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.service-features li:before {
+    content: "•";
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+/* ===================================
+   FEATURES SECTION
+   =================================== */
+.features {
+    padding: 6rem 0;
+    background: white;
+    border-top: 1px solid var(--color-border);
+}
+
+.features-grid {
+    display: block;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.features-content {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.features-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.features-description {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: 3rem;
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.feature-card {
+    background: var(--color-background-subtle);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    background: white;
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 24px rgba(30, 58, 138, 0.12);
+    transform: translateY(-4px);
+}
+
+.feature-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+}
+
+.feature-description {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    font-size: 0.9375rem;
+}
+
+/* ===================================
+   MODAL / CTA OVERLAY
+   =================================== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.75);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    max-width: 520px;
+    width: 100%;
+    padding: 3rem;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+    color: var(--color-text);
+}
+
+.modal-header {
+    margin-bottom: 1.5rem;
+}
+
+.modal-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+}
+
+.modal-subtitle {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.form-input,
+.form-select {
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--color-text);
+    transition: all 0.2s ease;
+}
+
+.form-input:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+.form-input::placeholder {
+    color: var(--color-text-secondary);
+    opacity: 0.6;
+}
+
+.form-helper {
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+.form-submit {
+    margin-top: 0.5rem;
+    padding: 1rem 2rem;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+.form-submit:hover {
+    background: var(--color-primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(30, 58, 138, 0.4);
+}
+
+.form-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Confirmation State */
+.confirmation-state {
+    display: none;
+}
+
+.confirmation-state.active {
+    display: block;
+}
+
+.confirmation-icon {
+    width: 64px;
+    height: 64px;
+    background: #10b981;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 2rem;
+}
+
+.confirmation-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.confirmation-steps {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.confirmation-steps li {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.confirmation-footer {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.confirmation-note {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+.confirmation-accelerator {
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+@media (max-width: 640px) {
+    .modal-content {
+        padding: 2rem;
+    }
+    
+    .modal-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* ===================================
+   WHAT WE DELIVER
+   =================================== */
+.what-we-deliver {
+    padding: 6rem 0;
+    background: var(--color-background-subtle);
+    border-top: 1px solid var(--color-border);
+}
+
+.deliver-section {
+    margin-bottom: 5rem;
+}
+
+.deliver-section:last-child {
+    margin-bottom: 0;
+}
+
+.deliver-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.deliver-layout.reverse {
+    direction: rtl;
+}
+
+.deliver-layout.reverse > * {
+    direction: ltr;
+}
+
+.deliver-content {
+    padding-top: 1rem;
+}
+
+.deliver-headline {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.deliver-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.deliver-list li {
+    padding: 0.875rem 0;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.deliver-list li:last-child {
+    border-bottom: none;
+}
+
+.deliver-visual {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.visual-label {
+    display: inline-block;
+    background: var(--color-primary);
+    color: white;
+    padding: 0.25rem 0.625rem;
+    border-radius: 4px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.transcript-line {
+    padding: 0.625rem 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+.transcript-result {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-border);
+    color: #10b981;
+    font-weight: 500;
+}
+
+/* ===================================
+   REAL WORKFLOWS
+   =================================== */
+.workflows {
+    padding: 4rem 0 6rem;
+    background: var(--color-background);
+    border-top: 1px solid var(--color-border);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-text);
+    letter-spacing: -0.03em;
+    margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+}
+
+.demo-preview-banner {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1e40af 100%);
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 4rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(30, 58, 138, 0.2);
+}
+
+.demo-preview-text {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.demo-preview-subtext {
+    font-size: 0.9375rem;
+    opacity: 0.9;
+}
+
+.workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.workflow-card {
+    background: var(--color-background-subtle);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    position: relative;
+}
+
+.workflow-number {
+    position: absolute;
+    top: -0.75rem;
+    left: 1.5rem;
+    background: var(--color-primary);
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.workflow-type {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.875rem;
+    padding-top: 0.5rem;
+}
+
+.workflow-description {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    font-size: 0.9375rem;
+}
+
+/* ===================================
+   WHY THIS WORKS
+   =================================== */
+.why-works {
+    padding: 6rem 0;
+    background: var(--color-background-subtle);
+    border-top: 1px solid var(--color-border);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.why-item {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.why-number {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.why-content {
+    padding-top: 0.25rem;
+}
+
+.why-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+    letter-spacing: -0.01em;
+}
+
+.why-text {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    font-size: 0.9375rem;
+}
+
+/* ===================================
+   PRICING SECTION
+   =================================== */
+.pricing {
+    padding: 6rem 0;
+    background: var(--color-background);
+    border-top: 1px solid var(--color-border);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.pricing-card {
+    background: white;
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    padding: 2rem 1.75rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 30px rgba(30, 58, 138, 0.12);
+    transform: translateY(-4px);
+}
+
+.pricing-card.featured {
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 30px rgba(30, 58, 138, 0.12);
+}
+
+.pricing-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-primary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.375rem 1rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.pricing-tier {
+    font-size: 1.375rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 0.375rem;
+}
+
+.pricing-description {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 1.25rem;
+    min-height: 36px;
+    line-height: 1.4;
+}
+
+.pricing-price {
+    margin-bottom: 1.5rem;
+}
+
+.price-amount {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+}
+
+.price-period {
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-features li {
+    padding: 0.5rem 0;
+    color: var(--color-text);
+    font-size: 0.875rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    line-height: 1.4;
+}
+
+.pricing-features li:before {
+    content: "✓";
+    color: var(--color-primary);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.pricing-features li.excluded {
+    color: var(--color-text-secondary);
+    opacity: 0.6;
+}
+
+.pricing-features li.excluded:before {
+    content: "—";
+    color: var(--color-text-secondary);
+}
+
+.pricing-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.pricing-cta.primary {
+    background: var(--color-primary);
+    color: white;
+}
+
+.pricing-cta.primary:hover {
+    background: var(--color-primary-light);
+    transform: translateY(-2px);
+}
+
+.pricing-cta.secondary {
+    background: var(--color-background-subtle);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+
+.pricing-cta.secondary:hover {
+    background: white;
+    border-color: var(--color-primary);
+}
+
+.pricing-note {
+    margin-top: 0.875rem;
+    padding-top: 0.875rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+.pricing-footer {
+    margin-top: 3rem;
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+}
+
+.pricing-footer strong {
+    color: var(--color-text);
+}
+
+/* ===================================
+   CTA SECTION
+   =================================== */
+.cta-section {
+    padding: 7rem 0;
+    background: var(--color-dark);
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-headline {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 3rem;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+}
+
+.cta-button-container {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--color-primary-light);
+    color: white;
+    padding: 1.25rem 3.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.125rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+    letter-spacing: -0.01em;
+}
+
+.cta-button:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(59, 130, 246, 0.5);
+}
+
+.cta-subtext {
+    margin-top: 1.25rem;
+    color: #94a3b8;
+    font-size: 0.9375rem;
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+.footer {
+    padding: 2.5rem 0;
+    background: var(--color-background);
+    border-top: 1px solid var(--color-border);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.footer-logo-c {
+    width: 24px;
+    height: 24px;
+    margin-right: -4px;
+}
+
+.footer-logo-text {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+}
+
+.footer-contact {
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+}
+
+.footer-contact a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
+@media (max-width: 968px) {
+    .hero {
+        min-height: auto;
+    }
+    
+    .hero-headline {
+        font-size: 3rem;
+    }
+    
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        min-height: auto;
+    }
+    
+    .hero-text {
+        padding-right: 0;
+    }
+    
+    .hero-visual {
+        order: -1;
+    }
+    
+    .chat-window {
+        height: 500px;
+        width: 100%;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .services-title,
+    .features-title {
+        font-size: 2.25rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .features-content {
+        padding-right: 0;
+    }
+    
+    .feature-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .deliver-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .workflow-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        padding: 3rem 0 2rem;
+    }
+    
+    .hero-headline {
+        font-size: 2.25rem;
+    }
+    
+    .hero-subheadline {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .cta-headline {
+        font-size: 2rem;
+    }
+    
+    .screenshot-content {
+        padding: 1.5rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-lockup">
+                    <svg class="logo-c" viewBox="0 0 100 100" fill="none">
+                        <path d="M75 25C68 19 59 16 50 16C33 16 19 30 19 47C19 64 33 78 50 78C59 78 68 75 75 69" 
+                              stroke="#1e3a8a" stroke-width="10" stroke-linecap="round"/>
+                        <path d="M78 22C70 16 61 13 50 13C31 13 16 28 16 47C16 66 31 81 50 81C61 81 70 78 78 72" 
+                              stroke="#64748b" stroke-width="8" stroke-linecap="round" opacity="0.4"/>
+                        <circle cx="75" cy="25" r="4.5" fill="#1e3a8a"/>
+                    </svg>
+                    <span class="logo-text">alio</span>
+                </div>
+                <div class="header-nav">
+                    <nav class="nav-links">
+                        <a href="#services" class="nav-link">Services</a>
+                        <a href="#features" class="nav-link">Features</a>
+                        <a href="#pricing" class="nav-link">Pricing</a>
+                    </nav>
+                    <a href="#book-demo" class="header-cta">See Your AI Front Desk</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-grid">
+                    <div class="hero-text">
+                        <h1 class="hero-headline">Your front desk answers every call, books every appointment, and never sleeps.</h1>
+                        <p class="hero-subheadline"><span style="color: var(--color-primary); font-weight: 800;">Calio</span> is an AI-powered front desk that handles calls, chat, and scheduling automatically—so you never miss a customer.</p>
+                        
+                        <!-- Audio Demo Button -->
+                        <div class="audio-demo-button">
+                            <button class="demo-button" id="watchDemoButton">
+                                <span class="demo-button-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </span>
+                                <span>Hear a real AI conversation</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-visual">
+                        <div class="chat-window">
+                            <div class="chat-header">
+                                <div class="chat-status-dot"></div>
+                                <div>
+                                    <div class="chat-title" id="chatBusinessName">Smith Plumbing</div>
+                                    <div class="chat-subtitle">Online • Responds instantly</div>
+                                </div>
+                            </div>
+                            <div class="chat-messages" id="chatMessages">
+                                <!-- Messages will be dynamically added here -->
+                            </div>
+                            <div class="chat-input">
+                                <div class="input-field">Type your message...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What It Does -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="services-header">
+                <h2 class="services-title">One system. Three core capabilities.</h2>
+                <p class="services-description">Calio handles the routine work of your front desk automatically—calls, messages, and appointments—so you can focus on serving customers.</p>
+            </div>
+            
+            <div class="services-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="service-card">
+                    <h3 class="service-title">Answers Calls</h3>
+                    <p class="service-description">Every call is answered, qualified, and routed. Emergency calls get priority. Routine questions get handled. No voicemail.</p>
+                    <ul class="service-features">
+                        <li>24/7 availability</li>
+                        <li>Natural conversation</li>
+                        <li>Call transcripts</li>
+                        <li>Smart routing</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3 class="service-title">Books Appointments</h3>
+                    <p class="service-description">Customers schedule directly through your site or by phone. Appointments sync to your calendar. Confirmations sent automatically.</p>
+                    <ul class="service-features">
+                        <li>Calendar integration</li>
+                        <li>Availability checking</li>
+                        <li>Automated confirmations</li>
+                        <li>Rescheduling handled</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3 class="service-title">Captures Leads</h3>
+                    <p class="service-description">Every conversation becomes a lead. Contact info, service interest, and timing are captured and organized for follow-up.</p>
+                    <ul class="service-features">
+                        <li>Lead qualification</li>
+                        <li>Contact details saved</li>
+                        <li>Follow-up scheduling</li>
+                        <li>CRM integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="features-content">
+                    <h2 class="features-title">Designed to work reliably.</h2>
+                    <p class="features-description">Calio is built to handle real customer interactions every day. The system learns your business, integrates with your calendar, and improves over time.</p>
+                </div>
+                
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <h3 class="feature-title">Instant setup</h3>
+                        <p class="feature-description">Configured in minutes. The AI learns your services, hours, and typical customer questions during onboarding.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3 class="feature-title">Always available</h3>
+                        <p class="feature-description">Calls and messages are handled 24/7. No holidays, sick days, or missed shifts.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3 class="feature-title">Human handoff</h3>
+                        <p class="feature-description">Complex requests transfer to your team. The AI summarizes the conversation before connecting.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3 class="feature-title">Full transparency</h3>
+                        <p class="feature-description">Every call and message is logged with transcripts. Review interactions anytime.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Three plans. Same system.</h2>
+                <p class="section-subtitle">All plans include voice, chat, and scheduling. Choose based on volume and setup needs.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Tier 1 -->
+                <div class="pricing-card">
+                    <h3 class="pricing-tier">AI Receptionist</h3>
+                    <p class="pricing-description">For businesses with an existing website</p>
+                    <div class="pricing-price">
+                        <span class="price-amount">$179</span>
+                        <span class="price-period">/ month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>AI voice agent (calls only)</li>
+                        <li>Call transcripts + summaries</li>
+                        <li>Missed-call handling</li>
+                        <li>Business-hours + after-hours logic</li>
+                        <li>Basic customization</li>
+                        <li>200 voice minutes included</li>
+                        <li>500 SMS messages included</li>
+                        <li class="excluded">Website</li>
+                        <li class="excluded">Chat widget</li>
+                    </ul>
+                    <a href="#book-demo" class="pricing-cta secondary">Get Started</a>
+                    <div class="pricing-note">
+                        Overage rates: Voice $0.25/min • SMS $0.04/msg<br>
+                        No commitment • Cancel anytime
+                    </div>
+                </div>
+
+                <!-- Tier 2 - Featured -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <h3 class="pricing-tier">AI Front Desk</h3>
+                    <p class="pricing-description">Complete system with website and 24/7 coverage</p>
+                    <div class="pricing-price">
+                        <span class="price-amount">$299</span>
+                        <span class="price-period">/ month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Everything in AI Receptionist</li>
+                        <li>Custom website included</li>
+                        <li>Chat widget + SMS</li>
+                        <li>24/7 voice, chat, and text</li>
+                        <li>Lead capture + routing</li>
+                        <li>Transcripts & logs</li>
+                        <li>250 voice minutes included</li>
+                        <li>750 SMS messages included</li>
+                        <li>Set-and-forget operation</li>
+                    </ul>
+                    <a href="#book-demo" class="pricing-cta primary">Get Started</a>
+                    <div class="pricing-note">
+                        Overage rates: Voice $0.20/min • SMS $0.04/msg<br>
+                        6-month minimum • No setup fees
+                    </div>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="pricing-card">
+                    <h3 class="pricing-tier">AI Front Desk Pro</h3>
+                    <p class="pricing-description">Advanced features and priority support</p>
+                    <div class="pricing-price">
+                        <span class="price-amount">$499</span>
+                        <span class="price-period">/ month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Everything in AI Front Desk</li>
+                        <li>Priority lead escalation</li>
+                        <li>Automated follow-ups</li>
+                        <li>Conversion-optimized AI</li>
+                        <li>Monthly performance insights</li>
+                        <li>Priority tuning & support</li>
+                        <li>500 voice minutes included</li>
+                        <li>1,000 SMS messages included</li>
+                        <li>Dedicated success manager</li>
+                    </ul>
+                    <a href="#book-demo" class="pricing-cta secondary">Get Started</a>
+                    <div class="pricing-note">
+                        Overage rates: Voice $0.18/min • SMS $0.04/msg<br>
+                        6-month minimum • Priority onboarding
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-footer">
+                <strong>All plans include:</strong> Real-time notifications, calendar integration, and ongoing AI improvements.<br>
+                Plans with websites require a 6-month minimum. Voice-only plans have no commitment.<br>
+                Overage minutes billed monthly or automatic upgrade to next tier available.
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-container">
+                <h2 class="cta-headline">See how Calio works for your business.</h2>
+                <div class="cta-button-container">
+                    <a href="#book-demo" class="cta-button">See Your AI Front Desk</a>
+                    <p class="cta-subtext">We'll show you a working preview using your business name and information. You'll interact with an AI agent configured for your industry—hear how it answers calls, books appointments, and handles customer questions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Modal -->
+    <div class="modal-overlay" id="ctaModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            
+            <!-- Form State -->
+            <div class="modal-form-state" id="formState">
+                <div class="modal-header">
+                    <h2 class="modal-title">See Your AI Front Desk</h2>
+                    <p class="modal-subtitle">We'll create a short, private preview showing how Calio would answer calls and chat with customers as if it were your business.</p>
+                </div>
+                
+                <form class="modal-form" id="ctaForm" name="preview-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <!-- Honeypot field for spam protection -->
+                    <input type="hidden" name="form-name" value="preview-request">
+                    <p style="display:none;">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="businessName">Business name</label>
+                        <input 
+                            type="text" 
+                            id="businessName" 
+                            name="businessName" 
+                            class="form-input" 
+                            placeholder="Smith Plumbing"
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="website">Website</label>
+                        <input 
+                            type="text" 
+                            id="website" 
+                            name="website" 
+                            class="form-input" 
+                            placeholder="smithplumbing.com"
+                        >
+                        <span class="form-helper">Leave blank if you don't have one yet</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="businessType">Business type</label>
+                        <select id="businessType" name="businessType" class="form-select">
+                            <option value="">Select your industry</option>
+                            <option value="home-services">Home Services (Plumbing, HVAC, Electrical)</option>
+                            <option value="healthcare">Healthcare (Dental, Medical, Therapy)</option>
+                            <option value="professional">Professional Services (Law, Accounting)</option>
+                            <option value="beauty">Beauty & Wellness (Salon, Spa, Fitness)</option>
+                            <option value="retail">Retail & E-commerce</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email address</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="form-input" 
+                            placeholder="you@yourbusiness.com"
+                            required
+                        >
+                    </div>
+                    
+                    <button type="submit" class="form-submit">Request Preview</button>
+                </form>
+            </div>
+            
+            <!-- Confirmation State -->
+            <div class="confirmation-state" id="confirmationState">
+                <div class="confirmation-icon">✓</div>
+                <h3 class="confirmation-title">What happens next</h3>
+                
+                <ol class="confirmation-steps">
+                    <li>
+                        <span class="step-number">1</span>
+                        <span>We generate a private demo using your business name and services</span>
+                    </li>
+                    <li>
+                        <span class="step-number">2</span>
+                        <span>You receive a link to preview the site and chat experience</span>
+                    </li>
+                    <li>
+                        <span class="step-number">3</span>
+                        <span>You also get a phone number to call the AI agent as if it represents your business</span>
+                    </li>
+                </ol>
+                
+                <div class="confirmation-footer">
+                    <p class="confirmation-note">Delivered within 24–48 hours. No obligation.</p>
+                    <p class="confirmation-accelerator">If this is time-sensitive, reply to the confirmation email with "Priority."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg class="footer-logo-c" viewBox="0 0 100 100" fill="none">
+                        <path d="M75 25C68 19 59 16 50 16C33 16 19 30 19 47C19 64 33 78 50 78C59 78 68 75 75 69" 
+                              stroke="#1e3a8a" stroke-width="10" stroke-linecap="round"/>
+                        <path d="M78 22C70 16 61 13 50 13C31 13 16 28 16 47C16 66 31 81 50 81C61 81 70 78 78 72" 
+                              stroke="#64748b" stroke-width="8" stroke-linecap="round" opacity="0.4"/>
+                        <circle cx="75" cy="25" r="4.5" fill="#1e3a8a"/>
+                    </svg>
+                    <span class="footer-logo-text">alio</span>
+                </div>
+                <div class="footer-contact">
+                    <p>Questions? Email us at <a href="/cdn-cgi/l/email-protection#1c74797070735c7f7d707573746d327f7371"><span class="__cf_email__" data-cfemail="deb6bbb2b2b19ebdbfb2b7b1b6aff0bdb1b3">[email&#160;protected]</span></a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Chat Scenarios
+const scenarios = [
+    {
+        businessName: "Smith Plumbing",
+        caption: "Emergency plumbing — 9:47 PM",
+        conversation: [
+            { sender: "user", text: "Hi, my toilet is overflowing and water is going everywhere" },
+            { sender: "ai", text: "I understand this is urgent. I can help you right away. What's your address?" },
+            { sender: "user", text: "145 Oak Street" },
+            { sender: "ai", text: "Got it, 145 Oak Street. Is this a residential property?" },
+            { sender: "user", text: "Yes" },
+            { sender: "ai", text: "Perfect. Have you tried turning off the water supply to the toilet?" },
+            { sender: "user", text: "No, where is that?" },
+            { sender: "ai", text: "There should be a valve behind the toilet near the floor. Turn it clockwise to shut off the water. This will stop the overflow." },
+            { sender: "user", text: "Ok I found it and turned it off" },
+            { sender: "ai", text: "Great work! Now let me get someone out to you. I have a plumber available tonight at 10:30 PM or tomorrow morning at 8:00 AM. Which works better?" },
+            { sender: "user", text: "Tonight please" },
+            { sender: "ai", text: "Perfect. I've scheduled Mike for 10:30 PM tonight at 145 Oak Street. Emergency service call fee is $150 plus repair costs. You'll receive a confirmation text in one minute." }
+        ]
+    },
+    {
+        businessName: "Premier Home Additions",
+        caption: "Quote request — 2:14 PM",
+        conversation: [
+            { sender: "user", text: "I'm looking to add a second story to my house. Can I get a quote?" },
+            { sender: "ai", text: "Absolutely! Second story additions are one of our specialties. What's the square footage you're looking to add?" },
+            { sender: "user", text: "Around 800 square feet" },
+            { sender: "ai", text: "Great. And what's your property address?" },
+            { sender: "user", text: "2847 Maple Drive, Seattle" },
+            { sender: "ai", text: "Thank you. Are you planning to include any specific rooms? For example, bedrooms, bathrooms, or an office?" },
+            { sender: "user", text: "Two bedrooms and one bathroom" },
+            { sender: "ai", text: "Perfect. What's your timeline for this project?" },
+            { sender: "user", text: "I'd like to start in the next 3-4 months" },
+            { sender: "ai", text: "That works well. For an 800 sq ft second story with 2 bedrooms and 1 bath, estimates typically range from $240K-$320K depending on finishes. I'd like to schedule a site visit for an accurate quote. Does this Thursday at 10 AM or Friday at 2 PM work?" },
+            { sender: "user", text: "Friday at 2 works" },
+            { sender: "ai", text: "Excellent. I've scheduled David, our senior estimator, for Friday at 2 PM at 2847 Maple Drive. He'll assess the structure and provide a detailed quote. You'll receive a confirmation email shortly." }
+        ]
+    },
+    {
+        businessName: "Riverside Family Dental",
+        caption: "New patient inquiry — 11:22 AM",
+        conversation: [
+            { sender: "user", text: "Do you accept new patients?" },
+            { sender: "ai", text: "Yes, we're currently accepting new patients! Welcome to Riverside Family Dental. Are you looking to schedule a cleaning and exam?" },
+            { sender: "user", text: "Yes, and I haven't been to a dentist in about 2 years" },
+            { sender: "ai", text: "No problem at all. We'll take great care of you. Do you have dental insurance?" },
+            { sender: "user", text: "Yes, I have Delta Dental" },
+            { sender: "ai", text: "Perfect, we accept Delta Dental. We'll verify your coverage before your appointment. What's your preferred day of the week?" },
+            { sender: "user", text: "Wednesdays or Thursdays work best" },
+            { sender: "ai", text: "Great. I have availability this Wednesday at 3:00 PM or next Thursday at 9:30 AM. Which would you prefer?" },
+            { sender: "user", text: "Next Thursday at 9:30 AM" },
+            { sender: "ai", text: "Excellent choice. Can I get your full name?" },
+            { sender: "user", text: "Jennifer Martinez" },
+            { sender: "ai", text: "Thank you, Jennifer. I've scheduled your new patient exam and cleaning for Thursday, February 13th at 9:30 AM with Dr. Chen. Please arrive 10 minutes early to complete paperwork." },
+            { sender: "user", text: "Perfect, thank you!" },
+            { sender: "ai", text: "You're welcome! You'll receive a confirmation email with new patient forms and directions. We're located at 456 River Road. Looking forward to seeing you next Thursday!" }
+        ]
+    }
+];
+
+let currentScenario = 0;
+
+const chatMessages = document.getElementById('chatMessages');
+const chatBusinessName = document.getElementById('chatBusinessName');
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function typeMessage(text, element) {
+    const words = text.split(' ');
+    for (let i = 0; i < words.length; i++) {
+        element.textContent += (i === 0 ? '' : ' ') + words[i];
+        await sleep(50 + Math.random() * 50);
+    }
+}
+
+async function showTypingIndicator() {
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'chat-message ai';
+    typingDiv.innerHTML = `
+        <span class="message-sender">AI Assistant</span>
+        <div class="typing-indicator">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+        </div>
+    `;
+    chatMessages.appendChild(typingDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    await sleep(800 + Math.random() * 400);
+    typingDiv.remove();
+}
+
+async function addMessage(message) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chat-message ${message.sender}`;
+    
+    const senderLabel = message.sender === 'user' ? 'Customer' : 'AI Assistant';
+    const bubbleDiv = document.createElement('div');
+    bubbleDiv.className = 'message-bubble';
+    
+    messageDiv.innerHTML = `<span class="message-sender">${senderLabel}</span>`;
+    messageDiv.appendChild(bubbleDiv);
+    chatMessages.appendChild(messageDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    
+    await typeMessage(message.text, bubbleDiv);
+    await sleep(message.sender === 'user' ? 1200 : 800);
+}
+
+async function runScenario() {
+    const scenario = scenarios[currentScenario];
+    
+    chatBusinessName.textContent = scenario.businessName;
+    chatMessages.innerHTML = '';
+    
+    for (const message of scenario.conversation) {
+        if (message.sender === 'ai') {
+            await showTypingIndicator();
+        }
+        await addMessage(message);
+    }
+    
+    await sleep(3000);
+    currentScenario = (currentScenario + 1) % scenarios.length;
+    runScenario();
+}
+
+// Start the demo
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(() => {
+        runScenario();
+    }, 500);
+    
+    // Watch Demo button
+    const watchDemoButton = document.getElementById('watchDemoButton');
+    if (watchDemoButton) {
+        watchDemoButton.addEventListener('click', function() {
+            // Replace with actual demo video URL or booking link
+            console.log('Watch demo clicked');
+            // window.open('YOUR_DEMO_VIDEO_URL', '_blank');
+        });
+    }
+});
+
+// Smooth scroll for anchor links
+document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('a[href^="#"]');
+    
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            
+            if (targetId === '#book-demo') {
+                openModal();
+                return;
+            }
+            
+            const target = document.querySelector(targetId);
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+
+// Modal functionality
+function openModal() {
+    const modal = document.getElementById('ctaModal');
+    const formState = document.getElementById('formState');
+    const confirmationState = document.getElementById('confirmationState');
+    
+    // Reset to form state
+    formState.style.display = 'block';
+    confirmationState.classList.remove('active');
+    
+    // Show modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    const modal = document.getElementById('ctaModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('ctaModal');
+    const closeButton = document.getElementById('modalClose');
+    const ctaForm = document.getElementById('ctaForm');
+    
+    // Close button
+    if (closeButton) {
+        closeButton.addEventListener('click', closeModal);
+    }
+    
+    // Close on overlay click
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    }
+    
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+    
+    // Form submission
+    if (ctaForm) {
+        ctaForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Disable submit button during submission
+            const submitButton = ctaForm.querySelector('.form-submit');
+            const originalText = submitButton.textContent;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Submitting...';
+            
+            // Submit form data to Netlify
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(new FormData(ctaForm)).toString()
+            })
+            .then(() => {
+                // Show confirmation state on success
+                const formState = document.getElementById('formState');
+                const confirmationState = document.getElementById('confirmationState');
+                
+                formState.style.display = 'none';
+                confirmationState.classList.add('active');
+                
+                // Reset form for next time
+                ctaForm.reset();
+                submitButton.disabled = false;
+                submitButton.textContent = originalText;
+            })
+            .catch((error) => {
+                console.error('Submission error:', error);
+                alert('There was an issue submitting your request. Please try again or email us at hello@caliohq.com');
+                submitButton.disabled = false;
+                submitButton.textContent = originalText;
+            });
+        });
+    }
+});
+
+
+// Fade-in animations on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -80px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.deliver-section, .workflow-card, .why-item');
+    elements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+});
+    </script>
+</body>
+</html>
